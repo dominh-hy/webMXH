@@ -1,0 +1,19 @@
+{
+  "name": "Thu Thuat MXH",
+  "short_name": "MXH Tips",
+  "description": "Thu thuat va meo tang tuong tac tren mang xa hoi.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0e90e0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
