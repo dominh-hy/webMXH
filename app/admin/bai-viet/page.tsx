@@ -1,7 +1,7 @@
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { Plus, Eye, Edit } from 'lucide-react'
