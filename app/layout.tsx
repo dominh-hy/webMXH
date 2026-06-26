@@ -76,3 +76,10 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+export const metadata = {
+  verification: {
+    google: "77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM",
+  },
+};
