@@ -78,8 +78,8 @@ export default function RootLayout({
 }
 
 
-export const metadata = {
-  verification: {
-    google: "77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM",
-  },
-};
+// export const metadata = {
+//   verification: {
+//     google: "77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM",
+//   },
+// };
