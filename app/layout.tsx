@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import Header from '@/components/layout/Header'
@@ -59,12 +60,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <Header />
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
           <main className="flex-1">
             {children}
           </main>
           <Footer />
-          <MobileNav />
+          <Suspense fallback={null}>
+            <MobileNav />
+          </Suspense>
           <PWARegistrar />
         </ThemeProvider>
       </body>

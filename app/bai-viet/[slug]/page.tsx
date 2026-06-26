@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -107,7 +108,15 @@ function extractTableOfContents(content: string | null): TocItem[] {
     .filter((item): item is TocItem => Boolean(item))
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default function PostPage({ params }: PostPageProps) {
+  return (
+    <Suspense fallback={<div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8"><div className="h-96 animate-pulse rounded-2xl" style={{ background: 'var(--bg-card)' }} /></div>}>
+      <PostPageContent params={params} />
+    </Suspense>
+  )
+}
+
+async function PostPageContent({ params }: PostPageProps) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
 

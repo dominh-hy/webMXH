@@ -7,9 +7,6 @@ import PlatformFilter from '@/components/posts/PlatformFilter'
 import InfinitePostGrid from '@/components/posts/InfinitePostGrid'
 import { TrendingUp, Sparkles } from 'lucide-react'
 
-// Enable Next.js instant navigation for immediate transitions
-export const unstable_instant = { prefetch: 'static' }
-
 interface HomeProps {
   searchParams: Promise<{ platform?: string }>
 }

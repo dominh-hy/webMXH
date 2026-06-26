@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { getCategories } from '@/lib/supabase/queries'
 import { PLATFORM_MAP } from '@/types'
@@ -8,7 +9,24 @@ export const metadata: Metadata = {
   description: 'Tat ca danh muc thu thuat mang xa hoi.',
 }
 
-export default async function CategoriesPage() {
+export default function CategoriesPage() {
+  return (
+    <Suspense fallback={
+      <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+        <div className="mb-6 h-10 w-48 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-20 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />
+          ))}
+        </div>
+      </main>
+    }>
+      <CategoriesPageContent />
+    </Suspense>
+  )
+}
+
+async function CategoriesPageContent() {
   const categories = await getCategories()
 
   return (

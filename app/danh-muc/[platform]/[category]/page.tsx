@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getPosts, getCategoryBySlug } from '@/lib/supabase/queries'
@@ -23,7 +24,24 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default function CategoryPage({ params }: CategoryPageProps) {
+  return (
+    <Suspense fallback={
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8 h-10 w-64 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-64 animate-pulse rounded-2xl" style={{ background: 'var(--bg-card)' }} />
+          ))}
+        </div>
+      </div>
+    }>
+      <CategoryPageContent params={params} />
+    </Suspense>
+  )
+}
+
+async function CategoryPageContent({ params }: CategoryPageProps) {
   const { platform, category } = await params
   const cat = await getCategoryBySlug(platform, category)
 

@@ -15,16 +15,35 @@ export async function generateMetadata({ searchParams }: SearchPageProps): Promi
   }
 }
 
-export default async function SearchPage({ searchParams }: SearchPageProps) {
+function SearchPageFallback() {
+  return (
+    <>
+      <div className="mb-6 h-8 w-64 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />
+      <div className="h-40 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />
+    </>
+  )
+}
+
+async function SearchPageContent({ searchParams }: SearchPageProps) {
   const { q } = await searchParams
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <>
       <h1 className="text-2xl font-extrabold mb-6" style={{ color: 'var(--text-primary)' }}>
         🔍 {q ? `Kết quả cho "${q}"` : 'Tìm kiếm'}
       </h1>
-      <Suspense fallback={<div className="h-40 skeleton rounded-xl" />}>
+      <Suspense fallback={<div className="h-40 animate-pulse rounded-xl" style={{ background: 'var(--bg-card)' }} />}>
         <SearchResultsClient initialQuery={q ?? ''} />
+      </Suspense>
+    </>
+  )
+}
+
+export default function SearchPage({ searchParams }: SearchPageProps) {
+  return (
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <Suspense fallback={<SearchPageFallback />}>
+        <SearchPageContent searchParams={searchParams} />
       </Suspense>
     </div>
   )
