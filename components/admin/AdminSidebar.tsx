@@ -15,6 +15,7 @@ import {
   Plus,
   ExternalLink,
   ChevronLeft,
+  Upload,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -92,7 +93,7 @@ export default function AdminSidebar({ user }: AdminSidebarProps) {
         ))}
 
         {/* Quick: New Post */}
-        <div className="pt-2">
+        <div className="pt-2 space-y-1">
           <Link
             href="/admin/bai-viet/tao-moi"
             title={collapsed ? 'Tạo bài viết mới' : undefined}
@@ -100,6 +101,14 @@ export default function AdminSidebar({ user }: AdminSidebarProps) {
           >
             <Plus size={18} className="flex-shrink-0" />
             {!collapsed && <span>Tạo bài viết mới</span>}
+          </Link>
+          <Link
+            href="/admin/bai-viet/import"
+            title={collapsed ? 'Import Excel' : undefined}
+            className={`admin-nav-item ${isActive('/admin/bai-viet/import') ? 'active' : ''}`}
+          >
+            <Upload size={18} className="flex-shrink-0" />
+            {!collapsed && <span>Import Excel</span>}
           </Link>
         </div>
       </nav>
