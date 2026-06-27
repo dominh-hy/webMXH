@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: `${cat.name} – Thủ Thuật ${p?.label ?? platform}`,
     description: cat.description ?? `Tổng hợp thủ thuật ${cat.name} trên ${p?.label ?? platform} mới nhất.`,
+    verification: {
+      google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+    },
   }
 }
 

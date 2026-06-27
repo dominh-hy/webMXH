@@ -12,6 +12,9 @@ export async function generateMetadata({ searchParams }: SearchPageProps): Promi
     title: q ? `Kết quả tìm kiếm: "${q}"` : 'Tìm kiếm',
     description: q ? `Tìm kiếm thủ thuật mạng xã hội với từ khoá "${q}"` : 'Tìm kiếm thủ thuật mạng xã hội',
     robots: { index: false },
+    verification: {
+      google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+    },
   }
 }
 

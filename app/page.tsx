@@ -19,9 +19,16 @@ export async function generateMetadata({ searchParams }: HomeProps): Promise<Met
     return {
       title: `Thủ Thuật ${p.label} – Tips & Tricks Mới Nhất`,
       description: `Khám phá các thủ thuật ${p.label} mới nhất giúp tăng tương tác và phát triển kênh hiệu quả.`,
+      verification: {
+        google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+      },
     }
   }
-  return {}
+  return {
+    verification: {
+      google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+    },
+  }
 }
 
 function HeroSectionSkeleton() {

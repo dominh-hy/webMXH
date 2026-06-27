@@ -20,13 +20,16 @@ interface PostPageProps {
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
-  if (!post) return { title: 'Không tìm thấy bài viết' }
+  if (!post) return { title: 'Không tìm thấy bài viết', verification: { google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM' } }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? ''
 
   return {
     title: post.meta_title ?? post.title,
     description: post.meta_description ?? post.excerpt ?? '',
+    verification: {
+      google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+    },
     openGraph: {
       title: post.meta_title ?? post.title,
       description: post.meta_description ?? post.excerpt ?? '',
