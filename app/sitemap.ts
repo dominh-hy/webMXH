@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllPublishedSlugs, getCategories } from '@/lib/supabase/queries'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://thuatmxh.vn'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://web-mxh.vercel.app'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [slugs, categories] = await Promise.all([

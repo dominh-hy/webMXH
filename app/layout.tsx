@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer'
 import MobileNav from '@/components/layout/MobileNav'
 import PWARegistrar from '@/components/PWARegistrar'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://thuatmxh.vn'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://web-mxh.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
