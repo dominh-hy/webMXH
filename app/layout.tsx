@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
   },
 }
 
@@ -78,8 +78,3 @@ export default function RootLayout({
 }
 
 
-// export const metadata = {
-//   verification: {
-//     google: "77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM",
-//   },
-// };
