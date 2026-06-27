@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Danh muc',
   description: 'Tat ca danh muc thu thuat mang xa hoi.',
   verification: {
-    google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+    google: 'SxvYqnSTMqEqic7w_enzirwVipWnwC1Ue6hUwl84rV0',
   },
 }
 

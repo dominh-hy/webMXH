@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     title: post.meta_title ?? post.title,
     description: post.meta_description ?? post.excerpt ?? '',
     verification: {
-      google: '77qOlDqHLf9prEx1DF-FK8jIptHiYuHeyvxSsm2mBxM',
+      google: 'SxvYqnSTMqEqic7w_enzirwVipWnwC1Ue6hUwl84rV0',
     },
     openGraph: {
       title: post.meta_title ?? post.title,
